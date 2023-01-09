@@ -62,6 +62,15 @@ public class Map {
   }
 
   public boolean attack(String Name) {
+    Location g_loc = locations.get(Name);
+    Location p_loc = locations.get("pacman");
+    if(g_loc.equals(p_loc)) {
+      gameOver = true;
+      return true;
+    } else if(g_loc.x == (p_loc.x - 1) || g_loc.x == (p_loc.x + 1) || g_loc.y == (p_loc.y - 1) || g_loc.y == (p_loc.y + 1)) {
+      gameOver = true;
+      return true;
+    }
     // update gameOver
     return false;
   }
