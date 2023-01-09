@@ -17,4 +17,4 @@ java -cp "src/" StartMenu
 
 - Test functions
   - TestMapAttack: Checks if the Map.attack feature works correctly.
-Test checks the functionality against the default game map.
+  - TestMapGetLoc: Test checks the functionality against the default game map.
