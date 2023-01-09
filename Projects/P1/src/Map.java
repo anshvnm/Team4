@@ -52,9 +52,31 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
+    // if location is not empty do not add something there
+    if (!getLoc(loc).equals(Type.EMPTY)) {
+      return false;
+    }
+    
+    // if empty is to be added then comp stays null
+    JComponent comp = null;
+    
+    if (type.equals(Type.PACMAN)) {
+      comp = new PacManComponent(loc.x, loc.y, dim);
+    } else if (type.equals(Type.GHOST)) {
+      comp = new GhostComponent(loc.x, loc.y, dim);
+    } else if (type.equals(Type.WALL)) {
+      comp = new WallComponent(loc.x, loc.y, dim);
+    } else if (type.equals(Type.COOKIE)) {
+      comp = new CookieComponent(loc.x, loc.y, dim);
+    }
+
     // update locations, components, and field
+    add(name, loc, comp, type);
+    
     // use the setLocation method for the component to move it to the new location
-    return false;
+    comp.setLocation(loc.x, loc.y);
+    
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
