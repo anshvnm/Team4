@@ -21,7 +21,6 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
-
 ## Function List <a name="functions"></a>
 ### Pacman Class
   The Pacman class represents a pacman in the game. It has fields like name, location, map, and shift that reprsents the pacman's name, 
@@ -38,6 +37,7 @@ java -cp "src/" StartMenu
 ### Ghost Class
   - get_valid_moves(): Returns an ArrayList of valid moves that Ghost can make, given its current position on the map, without moving out of bounds or running into a wall.
   - is_pacman_in_range: Returns true if pacman is 1 space away from a ghost in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. (Diagonal directions are not considered)
+  - move: If the ghost has a valid move, make it and return true. Relies on Map.move.
   - attack: After checking if the pacman is in range, the method allows the ghost to attack the pacman. It returns true if the attack
   was successful otherwise, returns false.
 
@@ -52,6 +52,7 @@ java -cp "src/" StartMenu
   - TestMapGetLoc: Test checks the functionality against the default game map.
   - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
   - TestMapEatCookie: Tests whether a cookie can be detected and deleted.
+  - TestGhostMove: Checks that ghosts can and do move.
   - TestGhostInRange: Tests that pacman can properly identify when a ghost is in range and is not.
   - TestPacManInRange: Tests that ghost can properly identify when pacman is in range and is not.
   - TestAttack: Tests the attack method of the ghost class and checks if the method returns the correct value after a successful/unsuccessful attack.
