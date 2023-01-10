@@ -26,7 +26,12 @@ java -cp "src/" StartMenu
 
 
 ## Function List <a name="functions"></a>
-### Map
+### Pacman Class
+  - is_ghost_in_range: Returns true if there is a ghost 1 space away from pacman in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. (Diagonal directions are not considered)
+
+### Ghost Class
+
+### Map Class
   - getLoc: Returns all the objects at a Location in the map.
 Test checks the functionality against the default game map.
   - move: If location inputed is empty then it places the desired componenet at that location and returns true. Otherwise, returns false and does not place component.
