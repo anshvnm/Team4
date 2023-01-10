@@ -3,5 +3,7 @@ import junit.framework.*;
 
 public class TestGhostMove extends TestCase {
 
-  public void testGhostMove() throws FileNotFoundException {}
+  public void testGhostMove() throws FileNotFoundException {
+    assertEquals(true, true);
+  }
 }

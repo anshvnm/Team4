@@ -1,5 +1,6 @@
 import java.io.*;
 import junit.framework.*;
+import java.awt.Color;
 
 public class TestAttack extends TestCase {
 
@@ -15,6 +16,6 @@ public class TestAttack extends TestCase {
      Ghost ghost = new Ghost("clyde", loc, map);
      GhostComponent comp = new GhostComponent(loc.x, loc.y, Color.BLACK, scale);
      map.add("clyde", loc, comp, Map.Type.GHOST);
-     assertTrue(ghost.attack(), true);
+     assertEquals(ghost.attack(), true);
   }
 }
