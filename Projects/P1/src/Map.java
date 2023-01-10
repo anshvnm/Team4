@@ -71,16 +71,11 @@ public class Map {
     // Getting the location of the PacMan
     Location pacman_loc = locations.get(name);
     if(field.get(pacman_loc).remove(Map.Type.COOKIE)) {
-      // If a COOKIE component is removed/found at the location of the PacMan
-      // Updating the token. Took the scale variable from the "MainFrame"
-      Location loc = new Location(pacman_loc.x, pacman_loc.y);
-      CookieComponent tok = new CookieComponent(loc.x, loc.y, 20);
-      myMap.add("tok_x" + pacman_loc.x + "_y" + pacman_loc.y, loc, tok, Map.Type.COOKIE);
-      add(tok);
-      tok.setLocation(pacman_loc.x, pacman_loc.y);
-
+      // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
+      // how many you have eaten
+      cookies++;
       // Return COOKIE/JComponent
-      return components.get(tok);
+      return components.get(name);
     } else {
       // If there was no COOKIE found
       return null;
