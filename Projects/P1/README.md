@@ -23,10 +23,15 @@ java -cp "src/" StartMenu
 
 ## Function List <a name="functions"></a>
 ### Pacman Class
-  - get_valid_moves(): Returns an ArrayList of valid moves that PacMan can make, given its current position on the map, without moving out of bounds or running into a wall.
-  - is_ghost_in_range: Returns true if there is a ghost 1 space away from pacman in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. (Diagonal directions are not considered)
+  The Pacman class represents a pacman in the game. It has fields like ==name==, ==location==, ==map==, and ==shift== that reprsents the pacman's name, 
+  its current location, the game's map, and movement respectively. Below are the methods of the Pacman class.
+  
+  - get_valid_moves(): Returns an ArrayList of valid moves that PacMan can make, given its current position on the map, without moving out of bounds 
+    or running into a wall.
+  - is_ghost_in_range: Returns true if there is a ghost 1 space away from pacman in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. 
+    (Diagonal    directions are not considered)
   - consume: The method checks if there is a cookie at the location of the pacman and if there is, then the eatCookie method of
-  the Map class is used to allow the pacman to eat it. If successful, it returns the cookie component otherwise null.
+    the Map class is used to allow the pacman to eat it. If successful, it returns the cookie component otherwise null.
 
 ### Ghost Class
   - get_valid_moves(): Returns an ArrayList of valid moves that Ghost can make, given its current position on the map, without moving out of bounds or running into a wall.
