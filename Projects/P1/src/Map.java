@@ -67,7 +67,10 @@ public class Map {
     if(g_loc.equals(p_loc)) {
       gameOver = true;
       return true;
-    } else if(g_loc.x == (p_loc.x - 1) || g_loc.x == (p_loc.x + 1) || g_loc.y == (p_loc.y - 1) || g_loc.y == (p_loc.y + 1)) {
+    } else if((g_loc.x == (p_loc.x - 1) && g_loc.y == p_loc.y) || 
+          (g_loc.x == (p_loc.x + 1) && g_loc.y == p_loc.y) || 
+          (g_loc.y == (p_loc.y - 1) && g_loc.x == p_loc.x) || 
+          (g_loc.y == (p_loc.y + 1) && g_loc.x == p_loc.x)) {
       gameOver = true;
       return true;
       
