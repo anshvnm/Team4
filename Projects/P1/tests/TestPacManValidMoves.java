@@ -24,5 +24,7 @@ public class TestPacManValidMoves extends TestCase {
     map.add("pacman", new Location(9, 12), pc, Map.Type.PACMAN);
     // Adding a Wall
     map.add("wall", new Location(9, 11), wall, Map.Type.WALL);
+    System.out.println(pacman.get_valid_moves());
+    //assertEquals(pacman.get_valid_moves(),{new Location(9, 13), new Location(8, 12), new Location(10, 12)});
   }
 }
