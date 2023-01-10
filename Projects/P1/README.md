@@ -38,6 +38,7 @@ Test checks the functionality against the default game map.
   - TestMapGetLoc: Test checks the functionality against the default game map.
   - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
   - TestMapEatCookie: Tests whether a cookie can be detected and deleted.
+  - TestGhostInRange: Tests that pacman can propely identify when a ghost is in range and is not.
 ## Function List
 - Map
   - getLoc: Returns all the objects at a Location in the map.
