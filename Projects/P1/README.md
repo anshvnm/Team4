@@ -14,9 +14,6 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 TODO: image playing pacman
 
 ## Running the Code <a name="codeinst"></a>
-Contributors: Evan Guenterberg
-
-TODO: image playing pacman
 
 To compile and run:
 ```
@@ -36,6 +33,7 @@ java -cp "src/" StartMenu
     (Diagonal    directions are not considered)
   - consume: The method checks if there is a cookie at the location of the pacman and if there is, then the eatCookie method of
     the Map class is used to allow the pacman to eat it. If successful, it returns the cookie component otherwise null.
+  - move: If pacman has a valid move, take it and return true. Relies on PacMan.get_valid_moves() and Map.move().
 
 ### Ghost Class
   - get_valid_moves(): Returns an ArrayList of valid moves that Ghost can make, given its current position on the map, without moving out of bounds or running into a wall.
@@ -61,4 +59,4 @@ java -cp "src/" StartMenu
   is in the same location and the cookie component is returned.
   - TestPacManValidMoves: Tests that PacMan.get_valid_moves() returns the correct list of valid moves, given an adjacent wall and boundaries.
   - TestGhostValidMoves: Tests that Ghost.get_valid_moves() returns the correct list of valid moves, given an adjacent wall and boundaries.
-
+  - TestPacManMove: Tests that PacMan can and does move.
