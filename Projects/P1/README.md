@@ -14,6 +14,10 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 TODO: image playing pacman
 
 ## Running the Code <a name="codeinst"></a>
+Contributors: Evan Guenterberg
+
+TODO: image playing pacman
+
 To compile and run:
 ```
 javac -cp "src/" src/*.java
@@ -34,3 +38,7 @@ Test checks the functionality against the default game map.
   - TestMapGetLoc: Test checks the functionality against the default game map.
   - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
   - TestMapEatCookie: Tests whether a cookie can be detected and deleted.
+## Function List
+- Map
+  - getLoc: Returns all the objects at a Location in the map.
+Test checks the functionality against the default game map.
