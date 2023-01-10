@@ -20,6 +20,7 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
+
 ## Function List <a name="functions"></a>
 ### Map
   - getLoc: Returns all the objects at a Location in the map.
