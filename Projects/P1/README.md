@@ -8,7 +8,7 @@
 
 
 ## Contributors <a name="members"></a>
-Evan Guenterberg, Fatima Chariwala
+Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya
 
 ## Game Visual <a name="image"></a>
 TODO: image playing pacman
