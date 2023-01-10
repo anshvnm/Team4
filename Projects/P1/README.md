@@ -8,7 +8,7 @@
 
 
 ## Contributors <a name="members"></a>
-Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya
+Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 
 ## Game Visual <a name="image"></a>
 TODO: image playing pacman
@@ -27,8 +27,10 @@ java -cp "src/" StartMenu
 Test checks the functionality against the default game map.
   - move: If location inputed is empty then it places the desired componenet at that location and returns true. Otherwise, returns false and does not place component.
   - attack: Checks if the ghost was successfully able to attack the pacman based on their locations and returns true or false based on it.
+  - eatCookie: Checks if the pacman is sharing location with a cookie and returns the cookie's component after removing if found, else it returns null.
 
 ### Test functions
   - TestMapAttack: Checks if the Map.attack feature works correctly.
   - TestMapGetLoc: Test checks the functionality against the default game map.
   - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
+  - TestMapEatCookie: Tests whether a cookie can be detected and deleted.

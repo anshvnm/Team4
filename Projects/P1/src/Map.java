@@ -28,7 +28,7 @@ public class Map {
     locations = new HashMap<String, Location>();
     components = new HashMap<String, JComponent>();
     field = new HashMap<Location, HashSet<Type>>();
-
+ 
     emptySet = new HashSet<Type>();
     wallSet = new HashSet<Type>();
     emptySet.add(Type.EMPTY);
@@ -92,8 +92,24 @@ public class Map {
   }
 
   public JComponent eatCookie(String name) {
-    // update locations, components, field, and cookies
-    // the id for a cookie at (10, 1) is tok_x10_y1
-    return null;
+    // Getting the location of the PacMan
+    Location pacman_loc = locations.get(name);
+    if(field.get(pacman_loc).remove(Map.Type.COOKIE)) {
+      // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
+      // how many you have eaten
+      cookies++;
+      String cookie_name = "";
+      for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
+        if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
+          cookie_name = entry.getKey();
+        }
+      }
+      // Return COOKIE/JComponent
+      return components.get(cookie_name);
+    } else {
+      // If there was no COOKIE found
+      return null;
+    }
+
   }
 }
