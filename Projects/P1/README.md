@@ -27,8 +27,8 @@ java -cp "src/" StartMenu
 
 ## Function List <a name="functions"></a>
 ### Pacman Class
-  ####The Pacman class represents a pacman in the game. It has fields like name, location, map, and shift that reprsents the pacman's name, 
-  ####its current location, the game's map, and movement respectively. Below are the methods of the Pacman class.
+  The Pacman class represents a pacman in the game. It has fields like name, location, map, and shift that reprsents the pacman's name, 
+  its current location, the game's map, and movement respectively. Below are the methods of the Pacman class.
   
   - get_valid_moves(): Returns an ArrayList of valid moves that PacMan can make, given its current position on the map, without moving out of bounds 
     or running into a wall.
