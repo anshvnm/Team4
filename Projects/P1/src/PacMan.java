@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+
 import javax.swing.JComponent;
 
 public class PacMan {
@@ -26,6 +28,11 @@ public class PacMan {
   }
 
   public JComponent consume() {
+    HashSet<Map.Type> ret = myMap.getLoc(myLoc);
+    if(ret.contains(Map.Type.COOKIE)) {
+      JComponent c_Comp = myMap.eatCookie(myName);
+      return c_Comp;
+    }
     return null;
   }
 }
