@@ -52,9 +52,21 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
+    // if location is not empty do not add something there
+    if (!getLoc(loc).contains(Type.EMPTY)) {
+      return false;
+    }
+    
+    // get component for item to move on map
+    JComponent comp = components.get(name);;
+
     // update locations, components, and field
+    add(name, loc, comp, type);
+    
     // use the setLocation method for the component to move it to the new location
-    return false;
+    comp.setLocation(loc.x, loc.y);
+    
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {

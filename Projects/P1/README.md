@@ -23,8 +23,11 @@ java -cp "src/" StartMenu
 ## Function List <a name="functions"></a>
 ### Map
   - getLoc: Returns all the objects at a Location in the map.
+Test checks the functionality against the default game map.
+  - move: If location inputed is empty then it places the desired componenet at that location and returns true. Otherwise, returns false and does not place component.
   - attack: Checks if the ghost was successfully able to attack the pacman based on their locations and returns true or false based on it.
 
 ### Test functions
   - TestMapAttack: Checks if the Map.attack feature works correctly.
   - TestMapGetLoc: Test checks the functionality against the default game map.
+  - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
