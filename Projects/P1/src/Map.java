@@ -74,8 +74,14 @@ public class Map {
       // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
       // how many you have eaten
       cookies++;
+      String cookie_name = "";
+      for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
+        if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
+          cookie_name = entry.getKey();
+        }
+      }
       // Return COOKIE/JComponent
-      return components.get(name);
+      return components.get(cookie_name);
     } else {
       // If there was no COOKIE found
       return null;
