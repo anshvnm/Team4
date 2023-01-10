@@ -24,7 +24,16 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    return false;
+    boolean in_range = false;
+    // checks right
+    if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.GHOST)) in_range = true;
+    // checks left
+    if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) in_range = true;
+    // checks up
+    if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) in_range = true;
+    // checks down
+    if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) in_range = true;
+    return in_range;
   }
 
   public JComponent consume() {
