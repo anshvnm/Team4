@@ -28,7 +28,7 @@ public class Map {
     locations = new HashMap<String, Location>();
     components = new HashMap<String, JComponent>();
     field = new HashMap<Location, HashSet<Type>>();
-
+ 
     emptySet = new HashSet<Type>();
     wallSet = new HashSet<Type>();
     emptySet.add(Type.EMPTY);
@@ -52,24 +52,64 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
+    // if location is not empty do not add something there
+    if (!getLoc(loc).contains(Type.EMPTY)) {
+      return false;
+    }
+    
+    // get component for item to move on map
+    JComponent comp = components.get(name);;
+
     // update locations, components, and field
+    add(name, loc, comp, type);
+    
     // use the setLocation method for the component to move it to the new location
-    return false;
+    comp.setLocation(loc.x, loc.y);
+    
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    // wallSet and emptySet will help you write this method
-    return null;
+    return field.getOrDefault(loc, emptySet);
   }
 
   public boolean attack(String Name) {
+    Location g_loc = locations.get(Name);
+    Location p_loc = locations.get("pacman");
+    if(g_loc.equals(p_loc)) {
+      gameOver = true;
+      return true;
+    } else if((g_loc.x == (p_loc.x - 1) && g_loc.y == p_loc.y) || 
+          (g_loc.x == (p_loc.x + 1) && g_loc.y == p_loc.y) || 
+          (g_loc.y == (p_loc.y - 1) && g_loc.x == p_loc.x) || 
+          (g_loc.y == (p_loc.y + 1) && g_loc.x == p_loc.x)) {
+      gameOver = true;
+      return true;
+      
+    }
     // update gameOver
     return false;
   }
 
   public JComponent eatCookie(String name) {
-    // update locations, components, field, and cookies
-    // the id for a cookie at (10, 1) is tok_x10_y1
-    return null;
+    // Getting the location of the PacMan
+    Location pacman_loc = locations.get(name);
+    if(field.get(pacman_loc).remove(Map.Type.COOKIE)) {
+      // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
+      // how many you have eaten
+      cookies++;
+      String cookie_name = "";
+      for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
+        if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
+          cookie_name = entry.getKey();
+        }
+      }
+      // Return COOKIE/JComponent
+      return components.get(cookie_name);
+    } else {
+      // If there was no COOKIE found
+      return null;
+    }
+
   }
 }
