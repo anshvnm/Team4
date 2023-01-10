@@ -29,4 +29,3 @@ public class PacMan {
     return null;
   }
 }
-ß
