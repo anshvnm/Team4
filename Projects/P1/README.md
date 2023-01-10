@@ -14,6 +14,10 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 TODO: image playing pacman
 
 ## Running the Code <a name="codeinst"></a>
+Contributors: Evan Guenterberg
+
+TODO: image playing pacman
+
 To compile and run:
 ```
 javac -cp "src/" src/*.java
@@ -23,9 +27,9 @@ java -cp "src/" StartMenu
 
 ## Function List <a name="functions"></a>
 ### Pacman Class
-  
+  - is_ghost_in_range: Returns true if there is a ghost 1 space away from pacman in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. (Diagonal directions are not considered)
+
 ### Ghost Class
-  - is_pacman_in_range: Returns true if pacman is 1 space away from a ghost in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. (Diagonal directions are not considered)
 
 ### Map Class
   - getLoc: Returns all the objects at a Location in the map.
@@ -39,4 +43,8 @@ Test checks the functionality against the default game map.
   - TestMapGetLoc: Test checks the functionality against the default game map.
   - TesetMapMove: Tests functionality of Map.move() and that components are placed in only in correct empty locations.
   - TestMapEatCookie: Tests whether a cookie can be detected and deleted.
-  - TestPacManInRange: Tests that ghost can propely identify when pacman is in range and is not
+  - TestGhostInRange: Tests that pacman can propely identify when a ghost is in range and is not.
+## Function List
+- Map
+  - getLoc: Returns all the objects at a Location in the map.
+Test checks the functionality against the default game map.
