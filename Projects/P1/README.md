@@ -3,8 +3,11 @@
 # Table of contents
 
 | [Contributors](#members)      |
+ -------------------------------
 | [Game Visual](#image)         |
+ -------------------------------
 | [Running the Code](#codeinst) |
+ -------------------------------
 | [Function List](#functions)   |
 
 
