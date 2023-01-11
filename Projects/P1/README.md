@@ -13,8 +13,8 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 ## Game Visual <a name="image"></a>
 
 <p align="center" width="100%">
-    <img width="50%" src="Pacman%20Game%201.png">
-    <img width="50%" src="Pacman%20Game.png">
+    <img width="40%" src="Pacman%20Game%201.png">
+    <img width="40%" src="Pacman%20Game.png">
 </p>
 
 
