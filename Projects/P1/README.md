@@ -1,15 +1,11 @@
 # Autonomous Pac-Man!
 
 # Table of contents
-
-| [Contributors](#members)      |
+1. [Contributors](#members)
+2. [Game Visual](#image)
+3. [Running the Code](#codeinst)
+4. [Function List](#functions)
  
-| [Game Visual](#image)         |
- 
-| [Running the Code](#codeinst) |
- 
-| [Function List](#functions)   |
-
 
 ## Contributors <a name="members"></a>
 Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
