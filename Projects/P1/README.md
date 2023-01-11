@@ -15,7 +15,7 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 <img
   src="Pacman%20Game.png"
   alt="Pacman"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
 
 
 ## Running the Code <a name="codeinst"></a>
