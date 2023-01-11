@@ -12,7 +12,7 @@ Evan Guenterberg, Fatima Chariwala, Dante Idiagbonya, Peter Hwang
 
 ## Game Visual <a name="image"></a>
 
-<img src="Pacman%20Game.png" width="150">  <img src="Pacman%20Game%201.png" width="150">
+<img src="Pacman%20Game%201.png" width="400">  <img src="Pacman%20Game.png" width="400">
 
 
 ## Running the Code <a name="codeinst"></a>
