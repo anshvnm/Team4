@@ -31,7 +31,7 @@ java -cp "src/" StartMenu
   The Pacman class represents a pacman in the game. It has fields like name, location, map, and shift that reprsents the pacman's name, 
   its current location, the game's map, and movement respectively. Below are the methods of the Pacman class.
   
-  - get_valid_moves(): Returns an ArrayList of valid moves that PacMan can make, given its current position on the map, without moving out of bounds 
+  - get_valid_moves: Returns an ArrayList of valid moves that PacMan can make, given its current position on the map, without moving out of bounds 
     or running into a wall.
   - is_ghost_in_range: Returns true if there is a ghost 1 space away from pacman in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. 
     (Diagonal    directions are not considered)
@@ -43,7 +43,7 @@ java -cp "src/" StartMenu
  The Ghost class represents a ghost in the game. A ghost has fields like name, location, and map that represents its name, ghost's location
  and the game's map respectively. Below are the methods of the ghost class that determines the features of a ghost.
  
-  - get_valid_moves(): Returns an ArrayList of valid moves that Ghost can make, given its current position on the map, without moving out of bounds 
+  - get_valid_moves: Returns an ArrayList of valid moves that Ghost can make, given its current position on the map, without moving out of bounds 
     or running into a wall.
   - is_pacman_in_range: Returns true if pacman is 1 space away from a ghost in the directions UP, DOWN, LEFT & RIGHT. False, otherwise. 
     (Diagonal directions are not considered)
