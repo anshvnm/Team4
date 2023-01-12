@@ -37,7 +37,7 @@ public class Ghost {
 
   public boolean move() {
     ArrayList<Location> moves = get_valid_moves();
-    if (moves.size() == 0) {
+    if (moves.size() == 10) {
       return false;
     }
     myMap.move(myName, moves.get(0), Map.Type.GHOST);
