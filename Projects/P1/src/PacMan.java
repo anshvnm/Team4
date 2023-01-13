@@ -67,7 +67,7 @@ public class PacMan {
     HashSet<Map.Type> ret = myMap.getLoc(myLoc);
     if(ret.contains(Map.Type.COOKIE)) {
       JComponent c_Comp = myMap.eatCookie(myName);
-      return c_Comp;
+      return null;
     }
     return null;
   }
