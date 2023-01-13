@@ -45,7 +45,7 @@ public class PacMan {
     if (moves.size() == 0) {
       return false;
     }
-    myMap.move(myName, moves.get(0), Map.Type.PACMAN);
+    myMap.move(myName, moves.get(3), Map.Type.PACMAN);
     myLoc = moves.get(0);
     return true;
   }
