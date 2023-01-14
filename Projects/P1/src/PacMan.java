@@ -22,25 +22,25 @@ public class PacMan {
     // Checks the PacMan surroundings for a wall and adds to the "valid" list of moves accordingly
     // Check if PacMan is out of bounds  
     // Right
-    if (!(myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if ((myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(1, 0));
     }
     // Left
-    if (!(myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if ((myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(-1, 0));
     }
     // Up
-    if (!(myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if ((myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(0, -1));
     }
     // Down
-    if (!(myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if ((myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(0, 1));
     }
     return result;
   }
 
-  public boolean move() {
+  public boolean move() { 
     ArrayList<Location> moves = get_valid_moves();
     if (moves.size() == 0) {
       return false;
@@ -51,23 +51,24 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    boolean in_range = false;
+    boolean in_range = true;
     // checks right
-    if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.GHOST)) in_range = true;
+    if (myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.GHOST)) in_range = false;
     // checks left
-    if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) in_range = true;
+    if (myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.GHOST)) in_range = false;
     // checks up
-    if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) in_range = true;
+    if (myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.GHOST)) in_range = false;
     // checks down
-    if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) in_range = true;
+    if (myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.GHOST)) in_range = false;
     return in_range;
   }
 
   public JComponent consume() {
+    
     HashSet<Map.Type> ret = myMap.getLoc(myLoc);
     if(ret.contains(Map.Type.COOKIE)) {
       JComponent c_Comp = myMap.eatCookie(myName);
-      return c_Comp;
+      return null;
     }
     return null;
   }

@@ -1,6 +1,5 @@
 import java.io.*;
 import junit.framework.*;
-import java.util.*;
 
 public class TestPacManValidMoves extends TestCase {
 
@@ -20,17 +19,18 @@ public class TestPacManValidMoves extends TestCase {
      WallComponent wall = new WallComponent(left.x, left.y, 20);
      map.add("wall", left, wall, Map.Type.WALL);
      
+     /*
      System.out.println("Center is:" + center);
      System.out.println("Left is:" + left);
      System.out.println("Right is:" + right);
      System.out.println("Up is:" + up);
      System.out.println("Down is:" + down);
      System.out.println(pacman.get_valid_moves());
-     /*
-     assertTrue(pacman.get_valid_moves().contains(left));
+    */
+
+     assertTrue(!pacman.get_valid_moves().contains(left));
      assertTrue(pacman.get_valid_moves().contains(right));
      assertTrue(pacman.get_valid_moves().contains(up));
      assertTrue(pacman.get_valid_moves().contains(down));
-     */
   }
 }
