@@ -1,0 +1,195 @@
+name: PacMan
+
+on:
+  push:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Compile Game and Tests
+        run: javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+        working-directory: ./Projects/P1
+
+  testGhostAttack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Testing the Ghost.attack() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+        working-directory: ./Projects/P1
+
+
+  testMapAttack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Testing the Map.attack() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+        working-directory: ./Projects/P1
+
+
+  testPacManConsume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Testing the PacMan.consume() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+        working-directory: ./Projects/P1
+
+
+  testMapGetLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Map.getLoc() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+        working-directory: ./Projects/P1
+
+
+  testGhostMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Ghost.move() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+        working-directory: ./Projects/P1
+
+
+  testPacManMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the PacMan.move() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+        working-directory: ./Projects/P1
+
+
+  testGhostInRange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the PacMan.is_ghost_in_range() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+        working-directory: ./Projects/P1  
+   
+   
+  testPacManInRange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Ghost.is_pacman_in_range() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+        working-directory: ./Projects/P1
+        
+        
+  testMapMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Map.move() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+        working-directory: ./Projects/P1
+        
+
+  testPacManValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the PacMan.get_valid_moves() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+        working-directory: ./Projects/P1
+        
+        
+  testGhostValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Ghost.get_valid_moves() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+        working-directory: ./Projects/P1
+
+
+  testMapEatCookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    needs: compile
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test the Map.eatCookie() function
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+        working-directory: ./Projects/P1

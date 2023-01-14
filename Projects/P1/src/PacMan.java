@@ -45,7 +45,7 @@ public class PacMan {
     if (moves.size() == 0) {
       return false;
     }
-    myMap.move(myName, moves.get(3), Map.Type.PACMAN);
+    myMap.move(myName, moves.get(0), Map.Type.PACMAN);
     myLoc = moves.get(0);
     return true;
   }
@@ -67,7 +67,7 @@ public class PacMan {
     HashSet<Map.Type> ret = myMap.getLoc(myLoc);
     if(ret.contains(Map.Type.COOKIE)) {
       JComponent c_Comp = myMap.eatCookie(myName);
-      return null;
+      return c_Comp;
     }
     return null;
   }
