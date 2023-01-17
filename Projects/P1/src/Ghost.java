@@ -40,8 +40,8 @@ public class Ghost {
     if (moves.size() == 0) {
       return false;
     }
-    // myMap.move(myName, moves.get(0), Map.Type.GHOST);
-    
+    myMap.move(myName, moves.get(0), Map.Type.GHOST);
+
     myLoc = moves.get(0);
     return true;
   }
