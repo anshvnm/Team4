@@ -70,7 +70,11 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    return field.getOrDefault(new Location(1, 1), emptySet); 
+    if (field.containsKey(loc)) {
+      return field.get(loc);
+    } else {
+      return emptySet;
+    }
   }
 
   public boolean attack(String Name) {
