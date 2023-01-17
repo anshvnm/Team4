@@ -41,6 +41,7 @@ public class Ghost {
       return false;
     }
     // myMap.move(myName, moves.get(0), Map.Type.GHOST);
+    
     myLoc = moves.get(0);
     return true;
   }
