@@ -54,7 +54,7 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // if location is not empty do not add something there
     if (!getLoc(loc).contains(Type.EMPTY)) {
-      
+      return false;
     }
     
     // get component for item to move on map
@@ -70,7 +70,11 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    return field.getOrDefault(new Location(1, 1), emptySet); 
+    if (field.containsKey(loc)) {
+      return field.get(loc);
+    } else {
+      return emptySet;
+    }
   }
 
   public boolean attack(String Name) {
@@ -79,11 +83,11 @@ public class Map {
     Location p_loc = locations.get("pacman");
     if(g_loc.equals(p_loc)) {
       gameOver = true;
-      return false;
-    } else if((g_loc.x == (p_loc.x - 2) && g_loc.y == p_loc.y) || 
-          (g_loc.x == (p_loc.x + 2) && g_loc.y == p_loc.y) || 
-          (g_loc.y == (p_loc.y - 2) && g_loc.x == p_loc.x) || 
-          (g_loc.y == (p_loc.y + 2) && g_loc.x == p_loc.x)) {
+      return true;
+    } else if((g_loc.x == (p_loc.x - 1) && g_loc.y == p_loc.y) || 
+          (g_loc.x == (p_loc.x + 1) && g_loc.y == p_loc.y) || 
+          (g_loc.y == (p_loc.y - 1) && g_loc.x == p_loc.x) || 
+          (g_loc.y == (p_loc.y + 1) && g_loc.x == p_loc.x)) {
       gameOver = true;
       return true;
       
@@ -95,17 +99,20 @@ public class Map {
   public JComponent eatCookie(String name) {
     // Getting the location of the PacMan
     Location pacman_loc = locations.get(name);
+    String tok = "tok_x" + pacman_loc.x + "_y" + pacman_loc.y;
     if(field.get(pacman_loc).remove(Map.Type.COOKIE)) {
       // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
       // how many you have eaten
       cookies++;
       for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
         if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
-          return components.get(name);
+          return components.get(tok);
         }
       }
+      JComponent cookie = components.get(tok);
+      components.remove(name);
       // Return COOKIE/JComponent
-      return components.get(name);
+      return cookie;
     } else {
       // If there was no COOKIE found
       return null;
