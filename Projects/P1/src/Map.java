@@ -108,7 +108,7 @@ public class Map {
       return components.get(name);
     } else {
       // If there was no COOKIE found
-      return components.get(name);
+      return null;
     }
 
   }
