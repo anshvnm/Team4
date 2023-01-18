@@ -99,20 +99,23 @@ public class Map {
   public JComponent eatCookie(String name) {
     // Getting the location of the PacMan
     Location pacman_loc = locations.get(name);
+    String tok = "tok_x" + pacman_loc.x + "_y" + pacman_loc.y;
     if(field.get(pacman_loc).remove(Map.Type.COOKIE)) {
       // If a COOKIE component is removed/found at the location of the PacMan, increase the count for the number of cookies which tracks
       // how many you have eaten
       cookies++;
       for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
         if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
-          return components.get(name);
+          return components.get(tok);
         }
       }
+      JComponent cookie = components.get(tok);
+      components.remove(tok);
       // Return COOKIE/JComponent
-      return components.get(name);
+      return cookie;
     } else {
       // If there was no COOKIE found
-      return components.get(name);
+      return null;
     }
 
   }
