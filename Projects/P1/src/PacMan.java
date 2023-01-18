@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -22,19 +23,19 @@ public class PacMan {
     // Checks the PacMan surroundings for a wall and adds to the "valid" list of moves accordingly
     // Check if PacMan is out of bounds  
     // Right
-    if ((myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if (!(myMap.getLoc(myLoc.shift(1, 0)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(1, 0));
     }
     // Left
-    if ((myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if (!(myMap.getLoc(myLoc.shift(-1, 0)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(-1, 0));
     }
     // Up
-    if ((myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if (!(myMap.getLoc(myLoc.shift(0, -1)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(0, -1));
     }
     // Down
-    if ((myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) || (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
+    if (!(myMap.getLoc(myLoc.shift(0, 1)).contains(Map.Type.WALL)) && (myLoc.x > 0 && myLoc.x <24) && (myLoc.y > 0 && myLoc.y <24)) {
       result.add(myLoc.shift(0, 1));
     }
     return result;

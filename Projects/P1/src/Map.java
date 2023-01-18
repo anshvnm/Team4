@@ -54,7 +54,7 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // if location is not empty do not add something there
     if (!getLoc(loc).contains(Type.EMPTY)) {
-      
+      return false;
     }
     
     // get component for item to move on map
