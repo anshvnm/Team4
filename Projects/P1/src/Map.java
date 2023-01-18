@@ -101,14 +101,14 @@ public class Map {
       cookies++;
       for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
         if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
-          return components.get(name);
+          return components.get(name/*"tok_x" + pacman_loc.x + "_y" + pacman_loc.y*/);
         }
       }
       // Return COOKIE/JComponent
-      return components.get(name);
+      return components.get("tok_x" + pacman_loc.x + "_y" + pacman_loc.y);
     } else {
       // If there was no COOKIE found
-      return components.get(name);
+      return null;
     }
 
   }
