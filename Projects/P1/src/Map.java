@@ -112,7 +112,7 @@ public class Map {
       JComponent cookie = components.get(name);
       components.remove(name);
       // Return COOKIE/JComponent
-      return null;
+      return cookie;
     } else {
       // If there was no COOKIE found
       return null;
