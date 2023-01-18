@@ -106,13 +106,13 @@ public class Map {
       cookies++;
       for (HashMap.Entry<String, Location> entry: locations.entrySet()) {
         if(entry.getValue().equals(pacman_loc) && !entry.getKey().equals(name)) {
-          return null;
+          return components.get(name);
         }
       }
       JComponent cookie = components.get(name);
       components.remove(name);
       // Return COOKIE/JComponent
-      return cookie;
+      return null;
     } else {
       // If there was no COOKIE found
       return null;
